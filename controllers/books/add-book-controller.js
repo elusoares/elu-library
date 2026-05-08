@@ -1,6 +1,6 @@
 const { writeNewBook } = require('../../services/data-service')
 
-const postBook = async (req, res) => {
+const addBook = async (req, res) => {
     try {
         const body = req.body 
         if (!body) {
@@ -16,4 +16,4 @@ const postBook = async (req, res) => {
     
 }
 
-module.exports = postBook
+module.exports = addBook
