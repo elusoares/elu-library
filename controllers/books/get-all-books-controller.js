@@ -1,4 +1,4 @@
-const { fetchBooks } = require('../../services/data-service')
+const { fetchBooks } = require('../../services/book-service')
 
 const getAllBooksController = async (req, res) => {
     try {

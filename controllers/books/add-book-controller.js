@@ -1,4 +1,4 @@
-const { writeNewBook } = require('../../services/data-service')
+const { writeNewBook } = require('../../services/book-service')
 
 const addBook = async (req, res) => {
     try {
