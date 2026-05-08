@@ -1,6 +1,6 @@
 const { writeNewBook } = require('../../services/book-service')
 
-const addBook = async (req, res) => {
+const addBookController = async (req, res) => {
     try {
         const body = req.body 
         if (!body) {
@@ -16,4 +16,4 @@ const addBook = async (req, res) => {
     
 }
 
-module.exports = addBook
+module.exports = addBookController
