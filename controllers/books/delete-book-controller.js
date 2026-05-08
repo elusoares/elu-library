@@ -1,4 +1,4 @@
-const { deleteBook } = require('../../services/book-service');
+const { deleteBook } = require('../../services/books-service');
 const { validateIdType } = require('../validate');
 
 const deleteBookController = (req, res) => {

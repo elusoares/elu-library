@@ -1,4 +1,4 @@
-const { editBookProperty } = require('../../services/book-service')
+const { editBookProperty } = require('../../services/books-service')
 const { validateIdType } = require('../validate')
 
 const editBookController = async (req, res) => {
