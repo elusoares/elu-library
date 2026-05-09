@@ -47,10 +47,38 @@ const deleteBook = (id) => {
     fs.writeFileSync(FILE_PATH, JSON.stringify(books, null, 2), 'utf-8');
 }
 
+const addNewFavoriteBook = (newFavoriteId) => {
+    editBookProperty(newFavoriteId, { isFavorite: true });
+}
+
+const deleteFavoriteBook = (favoriteId) => {
+    editBookProperty(favoriteId, { isFavorite: false });
+}
+
+const fetchAllFavoriteBooks = () => {
+    const books = fetchBooks();
+    return books.filter(book => book.isFavorite);
+}  
+
+const getFavoriteBookById = (id) => {
+    const book = getBookById(id);
+    if (!book) {
+        throw { status: 404, message: 'Livro não encontrado' }
+    }
+    if (!book.isFavorite) {
+        throw { status: 404, message: 'Livro não encontrado nos favoritos' }
+    }
+    return book;
+}
+
 module.exports = {
     fetchBooks,
     getBookById,
     addNewBook,
     editBookProperty,
-    deleteBook
+    deleteBook,
+    addNewFavoriteBook,
+    deleteFavoriteBook,
+    fetchAllFavoriteBooks,
+    getFavoriteBookById,
 }
