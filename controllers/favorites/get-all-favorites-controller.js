@@ -3,9 +3,9 @@ const { fetchAllFavoriteBooks } = require('../../services/books-service')
 const getAllFavoritesController = async (req, res) => {
     try {
         const favorites = fetchAllFavoriteBooks()        
-        res.send(favorites)        
+        res.status(200).json(favorites)        
     } catch (error) {
-        res.status(500).json(error.message)
+        res.status(500).send(error.message ?? 'Internal Server Error')
     }
 }
 
