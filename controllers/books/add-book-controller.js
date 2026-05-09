@@ -4,7 +4,7 @@ const addBookController = async (req, res) => {
     try {
         const body = req.body 
         if (!body) {
-            throw { status: 400, message: 'Bad Request: Body is required' }
+            throw { status: 400, message: 'Bad Request: Dados do livro são obrigatórios' }
         }
         addNewBook(body)
         res.status(201).send('Livro adicionado com sucesso')

@@ -3,13 +3,15 @@
     "id": 1,
     "titulo": "O Senhor dos Anéis",
     "autor": "J.R.R. Tolkien",
-    "ano_publicacao": 1954
+    "ano_publicacao": 1954,
+    "isFavorite": true
   },
   {
     "id": 2,
     "titulo": "1984",
     "autor": "George Orwell",
-    "ano_publicacao": 1949
+    "ano_publicacao": 1949,
+    "isFavorite": false
   },
   {
     "id": 3,

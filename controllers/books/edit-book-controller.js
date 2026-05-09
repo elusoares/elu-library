@@ -7,11 +7,11 @@ const editBookController = async (req, res) => {
         validateIdType(id)
         const body = req.body
         if (!body) {
-            throw { status: 400, message: 'Bad Request: Body is required' }
+            throw { status: 400, message: 'Bad Request: Dados do livro são obrigatórios' }
         }
         // Object.keys(body).forEach(key => {
         //     if (!['titulo', 'autor', 'ano_publicacao'].includes(key)) {
-        //         throw { status: 400, message: `Bad Request: Invalid field ${key}` }
+        //         throw { status: 400, message: `Bad Request: Campo inválido ${key}` }
         //     }
         // })
         editBookProperty(Number(id), body)
