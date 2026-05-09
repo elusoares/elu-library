@@ -14,7 +14,7 @@ const getBookById = (id) => {
     return books.find(book => book.id === id);
 }
 
-const writeNewBook = (newBook) => {
+const addNewBook = (newBook) => {
     const books = fetchBooks();
     const booksLength = books.length;
     const newBookId = booksLength + 1;
@@ -50,7 +50,7 @@ const deleteBook = (id) => {
 module.exports = {
     fetchBooks,
     getBookById,
-    writeNewBook,
+    addNewBook,
     editBookProperty,
     deleteBook
 }

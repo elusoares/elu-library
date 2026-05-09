@@ -1,4 +1,4 @@
-const { writeNewBook } = require('../../services/books-service')
+const { addNewBook } = require('../../services/books-service')
 
 const addBookController = async (req, res) => {
     try {
@@ -6,7 +6,7 @@ const addBookController = async (req, res) => {
         if (!body) {
             throw { status: 400, message: 'Bad Request: Body is required' }
         }
-        writeNewBook(body)
+        addNewBook(body)
         res.status(201).send('Livro adicionado com sucesso')
     } catch (error) {
         console.log(error);
