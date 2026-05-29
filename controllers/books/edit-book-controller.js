@@ -14,7 +14,7 @@ const editBookController = async (req, res) => {
         //         throw { status: 400, message: `Bad Request: Campo inválido ${key}` }
         //     }
         // })
-        editBookProperty(Number(id), body)
+        editBookProperty(id, body)
         res.status(200).send('Livro atualizado com sucesso')
     } catch (error) {
         console.log(error);
