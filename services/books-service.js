@@ -27,15 +27,16 @@ const getBookById = async (id) => {
     return book;
 }
 
-const addNewBook = (newBook) => {
-    const books = fetchBooks();
-    const booksLength = books.length;
-    const newBookId = booksLength + 1;
-    books.push({
-        id: newBookId,
-        ...newBook
-    });
-    fs.writeFileSync(FILE_PATH, JSON.stringify(books, null, 2), 'utf-8');
+const addNewBook = async (newBook) => {
+    // const books = fetchBooks();
+    // const booksLength = books.length;
+    // const newBookId = booksLength + 1;
+    // books.push({
+    //     id: newBookId,
+    //     ...newBook
+    // });
+    // fs.writeFileSync(FILE_PATH, JSON.stringify(books, null, 2), 'utf-8');
+    await Books.create(newBook);
 }
 
 const editBookProperty = (id, updatedBookProperty) => {
