@@ -1,5 +1,5 @@
-const { getBookById } = require('../../services/books-service')
-const { validateIdType } = require('../validate')
+import { getBookById } from '../../services/books-service.js'
+import { validateIdType } from '../validate.js'
 
 const getBookByIdController = async (req, res) => {
     try {
@@ -16,4 +16,4 @@ const getBookByIdController = async (req, res) => {
     }
 }
 
-module.exports = getBookByIdController
+export default getBookByIdController

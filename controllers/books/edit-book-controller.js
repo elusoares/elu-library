@@ -1,5 +1,5 @@
-const { editBookProperty } = require('../../services/books-service')
-const { validateIdType } = require('../validate')
+import { editBookProperty } from '../../services/books-service.js';
+import { validateIdType } from '../validate.js';
 
 const editBookController = async (req, res) => {
     try {
@@ -23,4 +23,4 @@ const editBookController = async (req, res) => {
     }
 }
 
-module.exports = editBookController
+export default editBookController

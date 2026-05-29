@@ -1,11 +1,11 @@
-const { deleteBook } = require('../../services/books-service');
-const { validateIdType } = require('../validate');
+import { deleteBook } from '../../services/books-service.js';
+import { validateIdType } from '../validate.js';
 
-const deleteBookController = (req, res) => {
+const deleteBookController = async (req, res) => {
     try {
         const { id } = req.params
         validateIdType(id)
-        deleteBook(Number(id))
+        await deleteBook(Number(id))
         res.status(200).send('Livro deletado com sucesso')
     } catch (error) {
         console.log(error);
@@ -13,4 +13,4 @@ const deleteBookController = (req, res) => {
     }
 }
 
-module.exports = deleteBookController
+export default deleteBookController

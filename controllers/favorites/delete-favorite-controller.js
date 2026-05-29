@@ -1,5 +1,5 @@
-const { deleteFavoriteBook } = require('../../services/books-service');
-const { validateIdType } = require('../validate');
+import { deleteFavoriteBook } from '../../services/books-service.js'
+import { validateIdType } from '../validate.js';
 
 const deleteFavoriteController = (req, res) => {
     try {
@@ -13,4 +13,4 @@ const deleteFavoriteController = (req, res) => {
     }
 }
 
-module.exports = deleteFavoriteController
+export default deleteFavoriteController

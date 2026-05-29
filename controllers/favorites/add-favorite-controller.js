@@ -1,5 +1,8 @@
-const { getFavoriteBookById, addNewFavoriteBook } = require('../../services/books-service')
-const { validateIdType } = require('../validate')
+import { 
+    getFavoriteBookById,
+    addNewFavoriteBook
+} from '../../services/books-service.js'
+import { validateIdType } from '../validate.js'
 
 const addFavoriteController = async (req, res) => {
     try {
@@ -22,4 +25,4 @@ const addFavoriteController = async (req, res) => {
     
 }
 
-module.exports = addFavoriteController
+export default addFavoriteController

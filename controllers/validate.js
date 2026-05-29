@@ -4,6 +4,6 @@ const validateIdType = (id) => {
     }
 }
 
-module.exports = {
+export {
     validateIdType
 }

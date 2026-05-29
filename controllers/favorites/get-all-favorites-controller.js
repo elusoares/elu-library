@@ -1,4 +1,4 @@
-const { fetchAllFavoriteBooks } = require('../../services/books-service')
+import { fetchAllFavoriteBooks } from '../../services/books-service.js'
 
 const getAllFavoritesController = async (req, res) => {
     try {
@@ -9,4 +9,4 @@ const getAllFavoritesController = async (req, res) => {
     }
 }
 
-module.exports = getAllFavoritesController
+export default getAllFavoritesController

@@ -1,4 +1,4 @@
-const { fetchBooks } = require('../../services/books-service')
+import { fetchBooks } from '../../services/books-service.js'
 
 const getAllBooksController = async (req, res) => {
     try {
@@ -9,4 +9,4 @@ const getAllBooksController = async (req, res) => {
     }
 }
 
-module.exports = getAllBooksController
+export default getAllBooksController

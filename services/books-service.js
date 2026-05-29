@@ -1,4 +1,10 @@
-const fs = require('fs')
+import fs from 'fs'
+import { fileURLToPath } from 'url'
+import { dirname } from 'path'
+
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = dirname(__filename)
+
 const FILE_PATH = `${__dirname}/../database/books.json`
 
 const fetchBooks = () => {
@@ -48,16 +54,16 @@ const deleteBook = (id) => {
 }
 
 const addNewFavoriteBook = (newFavoriteId) => {
-    editBookProperty(newFavoriteId, { isFavorite: true });
+    editBookProperty(newFavoriteId, { is_favorite: true });
 }
 
 const deleteFavoriteBook = (favoriteId) => {
-    editBookProperty(favoriteId, { isFavorite: false });
+    editBookProperty(favoriteId, { is_favorite: false });
 }
 
 const fetchAllFavoriteBooks = () => {
     const books = fetchBooks();
-    return books.filter(book => book.isFavorite);
+    return books.filter(book => book.is_favorite);
 }  
 
 const getFavoriteBookById = (id) => {
@@ -65,13 +71,13 @@ const getFavoriteBookById = (id) => {
     if (!book) {
         throw { status: 404, message: 'Livro não encontrado' }
     }
-    if (!book.isFavorite) {
+    if (!book.is_favorite) {
         throw { status: 404, message: 'Livro não encontrado nos favoritos' }
     }
     return book;
 }
 
-module.exports = {
+export {
     fetchBooks,
     getBookById,
     addNewBook,

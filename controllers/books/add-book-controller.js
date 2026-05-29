@@ -1,4 +1,4 @@
-const { addNewBook } = require('../../services/books-service')
+import { addNewBook } from '../../services/books-service.js'
 
 const addBookController = async (req, res) => {
     try {
@@ -6,7 +6,7 @@ const addBookController = async (req, res) => {
         if (!body) {
             throw { status: 400, message: 'Bad Request: Dados do livro são obrigatórios' }
         }
-        addNewBook(body)
+        await addNewBook(body)
         res.status(201).send('Livro adicionado com sucesso')
     } catch (error) {
         console.log(error);
@@ -16,4 +16,4 @@ const addBookController = async (req, res) => {
     
 }
 
-module.exports = addBookController
+export default addBookController
