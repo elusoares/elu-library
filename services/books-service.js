@@ -18,9 +18,13 @@ const fetchBooks = async () => {
     return books;
 }
 
-const getBookById = (id) => {    
-    const books = fetchBooks();
-    return books.find(book => book.id === id);
+const getBookById = async (id) => {    
+    // const books = fetchBooks();
+    // return books.find(book => book.id === id);
+    
+    const book = await Books.findById(id)
+    console.log(book);
+    return book;
 }
 
 const addNewBook = (newBook) => {
