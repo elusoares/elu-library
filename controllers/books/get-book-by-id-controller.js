@@ -5,7 +5,7 @@ const getBookByIdController = async (req, res) => {
     try {
         const { id } = req.params
         validateIdType(id)
-        const book = getBookById(Number(id))
+        const book = await getBookById(id)
         if (!book) {
             throw { status: 404, message: 'Livro não encontrado' }
         }
