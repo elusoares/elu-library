@@ -6,9 +6,7 @@ import deleteBookController from '../controllers/books/delete-book-controller.js
 import addBookController from '../controllers/books/add-book-controller.js'
 
 const booksRouter = Router()
-// COLOCAR ASYNC E AWAIT NAS FUNCOES, USAR PROMISE NO FS
-// TROCAR SEND POR JSON.SEND
-// FAZER AS ROTAS DE FAVORITOS, CRIANDO UM BANCO SO PRA ELES
+
 booksRouter.get('/', getAllBooksController)
 
 booksRouter.get('/:id', getBookByIdController)
