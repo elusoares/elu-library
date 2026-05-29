@@ -39,16 +39,17 @@ const addNewBook = async (newBook) => {
     await Books.create(newBook);
 }
 
-const editBookProperty = (id, updatedBookProperty) => {
-    const books = fetchBooks();
-    const bookIndex = books.findIndex(book => book.id === id);
-    if (bookIndex === -1) {
-        throw { status: 404, message: 'Livro não encontrado' }
-    }
-    Object.keys(updatedBookProperty).forEach(key => {
-        books[bookIndex][key] = updatedBookProperty[key];
-    });
-    fs.writeFileSync(FILE_PATH, JSON.stringify(books, null, 2), 'utf-8');
+const editBookProperty = async (id, updatedBookProperty) => {
+    // const books = fetchBooks();
+    // const bookIndex = books.findIndex(book => book.id === id);
+    // if (bookIndex === -1) {
+    //     throw { status: 404, message: 'Livro não encontrado' }
+    // }
+    // Object.keys(updatedBookProperty).forEach(key => {
+    //     books[bookIndex][key] = updatedBookProperty[key];
+    // });
+    // fs.writeFileSync(FILE_PATH, JSON.stringify(books, null, 2), 'utf-8');
+    await Books.findByIdAndUpdate(id, updatedBookProperty);
 }
 
 const deleteBook = (id) => {
