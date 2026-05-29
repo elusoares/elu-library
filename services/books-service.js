@@ -1,18 +1,21 @@
 import fs from 'fs'
 import { fileURLToPath } from 'url'
 import { dirname } from 'path'
+import Books from '../models/Book.js'
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = dirname(__filename)
 
 const FILE_PATH = `${__dirname}/../database/books.json`
 
-const fetchBooks = () => {
-    const fileExists = fs.existsSync(FILE_PATH);
-    if (!fileExists) {
-        fs.writeFileSync(FILE_PATH, '[]', 'utf-8');
-    }
-    return JSON.parse(fs.readFileSync(FILE_PATH, 'utf-8'));
+const fetchBooks = async () => {
+    // const fileExists = fs.existsSync(FILE_PATH);
+    // if (!fileExists) {
+    //     fs.writeFileSync(FILE_PATH, '[]', 'utf-8');
+    // }
+    // return JSON.parse(fs.readFileSync(FILE_PATH, 'utf-8'));
+    const books = await Books.find()
+    return books;
 }
 
 const getBookById = (id) => {    
