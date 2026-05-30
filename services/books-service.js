@@ -52,14 +52,15 @@ const editBookProperty = async (id, updatedBookProperty) => {
     await Books.findByIdAndUpdate(id, updatedBookProperty);
 }
 
-const deleteBook = (id) => {
-    const books = fetchBooks();
-    const bookIndex = books.findIndex(book => book.id === id);
-    if (bookIndex === -1) {
-        throw { status: 404, message: 'Livro não encontrado' }
-    }
-    books.splice(bookIndex, 1);
-    fs.writeFileSync(FILE_PATH, JSON.stringify(books, null, 2), 'utf-8');
+const deleteBook = async (id) => {
+    // const books = fetchBooks();
+    // const bookIndex = books.findIndex(book => book.id === id);
+    // if (bookIndex === -1) {
+    //     throw { status: 404, message: 'Livro não encontrado' }
+    // }
+    // books.splice(bookIndex, 1);
+    // fs.writeFileSync(FILE_PATH, JSON.stringify(books, null, 2), 'utf-8');
+    await Books.findByIdAndDelete(id);
 }
 
 const addNewFavoriteBook = (newFavoriteId) => {
