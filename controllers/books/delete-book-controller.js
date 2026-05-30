@@ -5,7 +5,7 @@ const deleteBookController = async (req, res) => {
     try {
         const { id } = req.params
         validateIdType(id)
-        await deleteBook(Number(id))
+        await deleteBook(id)
         res.status(200).send('Livro deletado com sucesso')
     } catch (error) {
         console.log(error);
